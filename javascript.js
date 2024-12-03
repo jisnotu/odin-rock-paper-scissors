@@ -3,3 +3,18 @@
 // If x is within the first third of the range, return rock.
 // If x is within the second third of the range, return paper.
 // If x is within the last third of hte range, return scissors.
+
+function getComputerChoice() {
+  // Set randomNumber to an integer between 0 and 2, inclusive.
+  let randomNumber = Math.floor(Math.random() * 3);
+  switch (randomNumber) {
+    case 0:
+      return "rock";
+    case 1:
+      return "paper";
+    case 2:
+      return "scissors";
+    default:
+      return "something has gone terribly wrong.";
+  }
+}
