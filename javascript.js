@@ -18,3 +18,11 @@ function getComputerChoice() {
       return "something has gone terribly wrong.";
   }
 }
+
+// PSEUDOCODE for function `getHumanChoice()`:
+// Ask user to enter "rock", "paper", or "scissors".
+// Return what the user entered.
+
+function getHumanChoice() {
+  return prompt("Enter 'rock', 'paper', or 'scissors'.");
+}
