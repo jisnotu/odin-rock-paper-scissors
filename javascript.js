@@ -30,7 +30,7 @@ function getHumanChoice() {
 function playGame() {
   let humanScore = 0;
   let computerScore = 0;
-  playRound(getHumanChoice(), getComputerChoice());
+  
   // PSEUDOCODE for function `playGame()`:
   // Repeat the following until 5 valid rounds are played:
     // Play a round. If there's a valid choice, show number of rounds played and score and
