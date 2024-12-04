@@ -30,7 +30,7 @@ function getHumanChoice() {
 function playGame() {
   let humanScore = 0;
   let computerScore = 0;
-
+  playRound(getHumanChoice(), getComputerChoice());
   // PSEUDOCODE for function `playGame()`:
   // Repeat the following until 5 valid rounds are played:
     // Play a round. If there's a valid choice, show number of rounds played and score and
@@ -55,14 +55,16 @@ function playGame() {
       // If it's not valid, then write a message in the console that says so and stop.
       default:
         console.log(`Invalid choice; no winner.`);
-        return;
+        // Return false, as it was an invalid round.
+        return false;
     }
     
     // Compare the human's choice to the computer's choice.
     // If they're equal, write a tie message in the console and don't increment either score.
     if (humanChoice === computerChoice) {
       console.log(`You both chose ${computerChoice}. It's a tie!`);
-      return;
+      // Return true, as it was a valid round.
+      return true;
     }
     // If they're different, write whether the human won or lost and increment the appropriate player's score.
     if (humanChoice === "rock") {
@@ -70,13 +72,17 @@ function playGame() {
         case "paper":
           console.log(`Rock loses to paper. You lost!`);
           computerScore++;
-          break;
+          // Return true, as it was a valid round.
+          return true;
         case "scissors":
           console.log(`Rock beats scissors. You won!`)
           humanScore++;
-          break;
+          // Return true, as it was a valid round.
+          return true;
         default:
           console.log(`Uh oh. You're not supposed to reach this part of the code.`);
+          // Return false, as it was an invalid round.
+          return false;
       }
     }
     else if (humanChoice === "paper") {
@@ -84,13 +90,17 @@ function playGame() {
         case "rock":
           console.log(`Paper beats rock. You won!`);
           humanScore++;
-          break;
+          // Return true, as it was a valid round.
+          return true;
         case "scissors":
           console.log(`Paper loses to scissors. You lost!`)
           computerScore++;
-          break;
+          // Return true, as it was a valid round.
+          return true;
         default:
           console.log(`Uh oh. You're not supposed to reach this part of the code.`);
+          // Return false, as it was an invalid round.
+          return false;
       }
     }
     else { // humanChoice === "scissors"
@@ -98,13 +108,17 @@ function playGame() {
         case "rock":
           console.log(`Scissors loses to rock. You lost!`);
           computerScore++;
-          break;
+          // Return true, as it was a valid round.
+          return true;
         case "paper":
           console.log(`Scissors beats paper. You won!`)
           humanScore++;
-          break;
+          // Return true, as it was a valid round.
+          return true;
         default:
           console.log(`Uh oh. You're not supposed to reach this part of the code.`);
+          // Return false, as it was an invalid round.
+          return false;
       }
     }
   }
