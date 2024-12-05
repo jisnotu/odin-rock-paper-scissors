@@ -36,8 +36,28 @@ function playGame() {
     // Play a round. If there's a valid choice, show number of rounds played and score and
     // increment "valid rounds played" counter.
     // If there isn't a valid choice, don't increment counter.
+  let numValidRounds = 0;
+  while (numValidRounds < 5) {
+    let isValidRound = playRound(getHumanChoice(), getComputerChoice());
+    if (isValidRound) {
+      numValidRounds++;
+    }
+    console.log(`Rounds Played: ${numValidRounds} / 5
+Computer: ${computerScore}
+Human: ${humanScore}`);
+  }
+  
   // Once 5 valid rounds are played, compare human's score to computer's score.
   // Display winner.
+  if (computerScore > humanScore) {
+    console.log(`The computer won!`);
+  }
+  else if (humanScore > computerScore) {
+    console.log(`You won!`);
+  }
+  else { // humanScore == computerScore
+    console.log(`You and the computer tied!`);
+  }
 
   // PSEUDOCODE for function `playRound()`:
   // Given the human's choice and the computer's choice...
